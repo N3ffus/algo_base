@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <h1 class="text-center">Личный кабинет пользователя {{ user.username }}</h1>
+        <br>
+        <h2>Количество решенных задач: {{ problems | length }} / {{ problems_count }} ({{ percent }} %)</h2>
+
+    </div>
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <h1 class="text-center">Список структур данных</h1>
+        <br>
+        {% for theme in themes %}
+            <h2>{{ theme.name }}</h2>
+            {% for data_structure in data_structures %}
+                {% if data_structure.theme.id == theme.id %}
+                    <p><a href="{% url 'data_structure' id=data_structure.id %}" class="small_link">{{ data_structure.name }}</a></p>
+                {% endif %}
+            {% endfor %}
+        <br>
+        {% endfor %}
+    </div>
+{% endblock content %}

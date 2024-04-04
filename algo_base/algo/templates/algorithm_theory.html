@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <h1 class="text-center">{{ algorithm.name }}: Теория</h1>
+        <br>
+        <h2>Статьи</h2>
+        {% for article in articles %}
+            <p><a href="{{ article.url }}" target="_blank" class="small_link">{{ article.name }}</a></p>
+        {% endfor %}
+        <br>
+        <h2>Видео</h2>
+        {% for video in videos %}
+            <p><a href="{{ video.url }}" target="_blank" class="small_link">{{ video.name }}</a></p>
+        {% endfor %}
+    </div>
+{% endblock content %}

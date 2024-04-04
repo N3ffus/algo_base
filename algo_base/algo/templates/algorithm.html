@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <h1 class="text-center">Алгоритм: {{ algorithm.name }}</h1>
+        <br>
+        <p><a href="{% url 'algorithm_practice' id=algorithm.id %}" class="big_link">Практика</a></p>
+        <p><a href="{% url 'algorithm_theory' id=algorithm.id %}" class="big_link">Теория</a></p>
+    </div>
+{% endblock content %}

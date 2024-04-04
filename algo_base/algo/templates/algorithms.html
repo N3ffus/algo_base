@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <h1 class="text-center">Список алгоритмов</h1>
+        <br>
+        {% for theme in themes %}
+            <h2>{{ theme.name }}</h2>
+            {% for algo in algorithms %}
+                {% if algo.theme.id == theme.id %}
+                    <p><a href="{% url 'algorithm' id=algo.id %}" class="small_link">{{ algo.name }}</a></p>
+                {% endif %}
+            {% endfor %}
+            <br>
+        {% endfor %}
+    </div>
+{% endblock content %}
